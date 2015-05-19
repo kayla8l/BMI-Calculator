@@ -1,0 +1,68 @@
+//
+//  main.c
+//  BMICalculator
+//
+//  Created by Lee on 15-05-18.
+//  Copyright (c) 2015 Lee. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// purpose of the program is to allow a person to enter information, and calculate their BMI
+// use fgets instead of scanf() for user input
+
+/*
+typedef struct {
+    int weight;
+    float height;
+} Person;
+ */
+
+// implement struct later on
+
+float BMICalc(int w, float h)
+{
+    float bmi_score = w / (h * h);
+    return bmi_score;
+}
+
+int main(int argc, const char * argv[])
+{
+    char buffer[BUFSIZ];
+    
+    int input_weight;
+    
+    printf ("Enter your weight in kilograms: ");
+
+    if (fgets(buffer, sizeof(buffer), stdin) != NULL)
+    {
+        input_weight = atoi(buffer);
+        // atoi converts string to integer (ASCII -> Integer)
+        printf ("You entered %d kg\n", input_weight);
+    }
+    
+    float input_height;
+    
+    printf ("Enter your height in meters: ");
+    
+    if (fgets(buffer, sizeof(buffer), stdin) != NULL)
+    {
+        input_height = atof(buffer);
+        // atof converts string to float (ASCII -> float)
+        printf ("You entered %.2f m\n", input_height);
+    }
+    
+    char name[100];
+    
+    printf ("Enter your name: ");
+    scanf("%s", name);
+    printf ("You entered %s \n", name);
+    
+    float bmi = BMICalc(input_weight, input_height);
+    
+    printf("%s's BMI is %.2f\n", name, bmi);
+    
+    return 0;
+}
+
