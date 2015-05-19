@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// purpose of the program is to allow a person to enter information, and calculate their BMI
+// purpose of the program is to allow users to enter their information and calculate their BMI
 // use fgets instead of scanf() for user input
 
 /*
